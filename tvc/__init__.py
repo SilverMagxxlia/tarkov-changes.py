@@ -6,7 +6,7 @@ Wrapper for the Tarkov Changes API
 :license: MIT, see LICENSE for more details.
 """
 
-__version__ = 'v0.1.2'
+__version__ = 'v0.2.0'
 
 from .ammunition import *
 from .armor import *
