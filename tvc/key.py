@@ -5,7 +5,7 @@ from typing import Union, TYPE_CHECKING
 if TYPE_CHECKING:
     from .types.key import Key as KeyPayload
 
-__all__ = 'Item'
+__all__ = ('Key',)
 
 
 class Key:

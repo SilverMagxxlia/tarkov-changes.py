@@ -15,7 +15,7 @@ from .item import Item
 from .key import Key
 from .requester import HTTPRequester
 
-__all__ = 'TVCClient'
+__all__ = ('TVCClient',)
 
 
 class TVCClient:

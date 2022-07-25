@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from .types.barter import Barter as BarterPayload
 
-__all__ = 'Barter'
+__all__ = ('Barter',)
 
 
 class Barter:

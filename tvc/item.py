@@ -5,7 +5,7 @@ from typing import List, TYPE_CHECKING
 if TYPE_CHECKING:
     from .types.item import Item as ItemPayload
 
-__all__ = 'Item'
+__all__ = ('Item',)
 
 
 class Item:

@@ -5,7 +5,7 @@ from typing import List, TYPE_CHECKING
 if TYPE_CHECKING:
     from .types.food import Food as FoodPayload
 
-__all__ = 'Food'
+__all__ = ('Food',)
 
 
 class Food:
