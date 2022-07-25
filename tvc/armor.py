@@ -37,6 +37,6 @@ class Armor:
         self.repair_cost: int = int(data['Repair Cost'])
         self.cell_height: int = int(data['Cell Height'])
         self.cell_width: int = int(data['Cell Width'])
-        self.weight: int = int(data['Item Weight'])
+        self.weight: float = float(data['Item Weight'])
         self.banned_on_flea: bool = data['Can be sold on flea market'] == 'false'
         self.discard_limit: int = int(data['Discard Limit'])
