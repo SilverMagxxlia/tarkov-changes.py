@@ -3,7 +3,7 @@ from typing import TypedDict
 from .cell import Cell
 from .item import ItemBase
 
-_BackPack = TypedDict(
+_Backpack = TypedDict(
     '_BackPack',
     {
         'Blocks Armored Vest': str,
@@ -17,5 +17,5 @@ _BackPack = TypedDict(
 )
 
 
-class BackPack(_BackPack, ItemBase, Cell):
+class Backpack(_Backpack, ItemBase, Cell):
     pass

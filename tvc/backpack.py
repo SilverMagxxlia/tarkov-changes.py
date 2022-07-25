@@ -3,12 +3,12 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from .types.backpack import BackPack as BackPackPayload
+    from .types.backpack import Backpack as BackPackPayload
 
 __all__ = 'BackPack'
 
 
-class BackPack:
+class Backpack:
 
     def __init__(self, payload: BackPackPayload) -> None:
         self.name: str = payload['Name']
