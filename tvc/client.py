@@ -7,6 +7,11 @@ from asyncio import get_event_loop, AbstractEventLoop
 
 from .ammunition import Ammunition
 from .armor import Armor
+from .backpack import Backpack
+from .barter import Barter
+from .food import Food
+from .grenade import Grenade
+from .item import Item
 from .requester import HTTPRequester
 
 
@@ -50,6 +55,26 @@ class TVCClient:
     async def fetch_armor(self, query: str = None) -> List[Armor]:
         data = await self.__requester.get_armor(query)
         return [Armor(d) for d in data]
+
+    async def fetch_backpack(self, query: str = None) -> List[Backpack]:
+        data = await self.__requester.get_backpack(query)
+        return [Backpack(d) for d in data]
+
+    async def fetch_barter(self, query: str = None) -> List[Barter]:
+        data = await self.__requester.get_barter(query)
+        return [Barter(d) for d in data]
+
+    async def fetch_food(self, query: str = None) -> List[Food]:
+        data = await self.__requester.get_food(query)
+        return [Food(d) for d in data]
+
+    async def fetch_grenade(self, query: str = None) -> List[Grenade]:
+        data = await self.__requester.get_grenade(query)
+        return [Grenade(d) for d in data]
+
+    async def fetch_item(self, query: str = None) -> List[Item]:
+        data = await self.__requester.get_item(query)
+        return [Item(d) for d in data]
 
     async def __aenter__(self) -> TVCClient:
         return self
