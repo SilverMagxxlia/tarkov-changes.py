@@ -4,6 +4,7 @@ from .ammunition import *
 from .armor import *
 from .backpack import *
 from .barter import *
+from .client import *
 from .food import *
 from .grenade import *
 from .item import *
