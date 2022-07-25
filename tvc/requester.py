@@ -112,7 +112,7 @@ class HTTPRequester:
         await self._session.close()
 
     def get_ammunition(self, query: str = None) -> Response[List[AmmunitionPayload]]:
-        url = 'ammo'
+        url = '/ammo'
 
         if query:
             url += f'?query={query}'
@@ -121,7 +121,7 @@ class HTTPRequester:
         return self.request(r)
 
     def get_armor(self, query: str = None) -> Response[List[ArmorPayload]]:
-        url = 'armor'
+        url = '/armor'
 
         if query:
             url += f'?query={query}'
@@ -130,7 +130,7 @@ class HTTPRequester:
         return self.request(r)
 
     def get_backpack(self, query: str = None) -> Response[List[BackpackPayload]]:
-        url = 'backpacks'
+        url = '/backpacks'
 
         if query:
             url += f'?query={query}'
@@ -139,7 +139,7 @@ class HTTPRequester:
         return self.request(r)
 
     def get_barter(self, query: str = None) -> Response[List[BarterPayload]]:
-        url = 'barters'
+        url = '/barters'
 
         if query:
             url += f'?query={query}'
@@ -148,7 +148,7 @@ class HTTPRequester:
         return self.request(r)
 
     def get_food(self, query: str = None) -> Response[List[FoodPayload]]:
-        url = 'food'
+        url = '/food'
 
         if query:
             url += f'?query={query}'
@@ -157,7 +157,7 @@ class HTTPRequester:
         return self.request(r)
 
     def get_grenade(self, query: str = None) -> Response[List[GrenadePayload]]:
-        url = 'grenades'
+        url = '/grenades'
 
         if query:
             url += f'?query={query}'
@@ -166,7 +166,7 @@ class HTTPRequester:
         return self.request(r)
 
     def get_item(self, query: str = None) -> Response[List[ItemPayload]]:
-        url = 'items'
+        url = '/items'
 
         if query:
             url += f'?query={query}'
@@ -175,7 +175,7 @@ class HTTPRequester:
         return self.request(r)
 
     def get_key(self, query: str = None) -> Response[List[KeyPayload]]:
-        url = 'keys'
+        url = '/keys'
 
         if query:
             url += f'?query={query}'
