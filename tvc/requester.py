@@ -102,6 +102,9 @@ class HTTPRequester:
             if 300 > response.status >= 200:
                 return data['results']
 
+    async def close(self) -> None:
+        await self._session.close()
+
     def get_ammunition(self, query: str = None) -> Response[List[AmmunitionPayload]]:
         url = 'ammo'
 
