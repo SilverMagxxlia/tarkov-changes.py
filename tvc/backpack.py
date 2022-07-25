@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from .types.backpack import Backpack as BackPackPayload
 
-__all__ = ('BackPack',)
+__all__ = ('Backpack',)
 
 
 class Backpack:
