@@ -25,6 +25,11 @@ from .exceptions import InvalidRequest
 if TYPE_CHECKING:
     from .types.armor import Armor as ArmorPayload
     from .types.ammunition import Ammunition as AmmunitionPayload
+    from .types.backpack import Backpack as BackpackPayload
+    from .types.barter import Barter as BarterPayload
+    from .types.food import Food as FoodPayload
+    from .types.grenade import Grenade as GrenadePayload
+    from .types.item import Item as ItemPayload
 
     T = TypeVar('T')
     BE = TypeVar('BE', bound=BaseException)
@@ -116,6 +121,51 @@ class HTTPRequester:
 
     def get_armor(self, query: str = None) -> Response[List[ArmorPayload]]:
         url = 'armor'
+
+        if query:
+            url += f'?query={query}'
+
+        r = Route('GET', url)
+        return self.request(r)
+
+    def get_backpack(self, query: str = None) -> Response[List[BackpackPayload]]:
+        url = 'backpacks'
+
+        if query:
+            url += f'?query={query}'
+
+        r = Route('GET', url)
+        return self.request(r)
+
+    def get_barter(self, query: str = None) -> Response[List[BarterPayload]]:
+        url = 'barters'
+
+        if query:
+            url += f'?query={query}'
+
+        r = Route('GET', url)
+        return self.request(r)
+
+    def get_food(self, query: str = None) -> Response[List[FoodPayload]]:
+        url = 'food'
+
+        if query:
+            url += f'?query={query}'
+
+        r = Route('GET', url)
+        return self.request(r)
+
+    def get_grenade(self, query: str = None) -> Response[List[GrenadePayload]]:
+        url = 'grenades'
+
+        if query:
+            url += f'?query={query}'
+
+        r = Route('GET', url)
+        return self.request(r)
+
+    def get_item(self, query: str = None) -> Response[List[ItemPayload]]:
+        url = 'items'
 
         if query:
             url += f'?query={query}'
