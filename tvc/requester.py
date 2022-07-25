@@ -30,6 +30,7 @@ if TYPE_CHECKING:
     from .types.food import Food as FoodPayload
     from .types.grenade import Grenade as GrenadePayload
     from .types.item import Item as ItemPayload
+    from .types.key import Key as KeyPayload
 
     T = TypeVar('T')
     BE = TypeVar('BE', bound=BaseException)
@@ -166,6 +167,15 @@ class HTTPRequester:
 
     def get_item(self, query: str = None) -> Response[List[ItemPayload]]:
         url = 'items'
+
+        if query:
+            url += f'?query={query}'
+
+        r = Route('GET', url)
+        return self.request(r)
+
+    def get_key(self, query: str = None) -> Response[List[KeyPayload]]:
+        url = 'keys'
 
         if query:
             url += f'?query={query}'
