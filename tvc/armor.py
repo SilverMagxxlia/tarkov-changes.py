@@ -5,6 +5,8 @@ from typing import List, TYPE_CHECKING
 if TYPE_CHECKING:
     from .types.armor import Armor as ArmorPayload
 
+__all__ = 'Armor'
+
 
 class Armor:
 
