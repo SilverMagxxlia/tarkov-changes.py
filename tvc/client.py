@@ -14,6 +14,8 @@ from .grenade import Grenade
 from .item import Item
 from .requester import HTTPRequester
 
+__all__ = 'TVCClient'
+
 
 class TVCClient:
 
