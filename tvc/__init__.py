@@ -1,3 +1,11 @@
+"""
+tvc.types
+~~~~~~~~~~~~~~
+Wrapper for the Tarkov Changes API
+:copyright: (c) 2022-present Hostagen
+:license: MIT, see LICENSE for more details.
+"""
+
 __version__ = 'v0.1.0'
 
 from .ammunition import *
