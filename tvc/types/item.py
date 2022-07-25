@@ -1,10 +1,14 @@
 from typing import List, TypedDict
 
-Item = TypedDict(
-    'Item',
+ItemBase = TypedDict(
+    'ItemBase',
     {
         'Name': str,
         'Item ID': str,
-        'props': List[str],
-    }
+    },
+    total=False,
 )
+
+
+class Item(ItemBase):
+    props: List[str]

@@ -1,13 +1,14 @@
 from typing import TypedDict
 
-Ammunition = TypedDict(
-    'Ammunition',
+from .cell import Cell
+from .item import ItemBase
+
+_Ammunition = TypedDict(
+    '_Ammunition',
     {
-        'Name': str,
         'Caliber': str,
         'Accuracy': str,
         'Recoil': str,
-        'Item ID': str,
         'Flesh Damage': str,
         'Penetration Power': str,
         'Armor Damage': str,
@@ -21,10 +22,13 @@ Ammunition = TypedDict(
         'Heavy Bleeding Delta': str,
         'Light Bleeding Delta': str,
         'Ballistic Coefficient': str,
-        'Cell Height': str,
-        'Cell Width': str,
         'Item Weight': str,
         'Max Stack Size': str,
         'Discard Limit': str,
-    }
+    },
+    total=False,
 )
+
+
+class Ammunition(_Ammunition, ItemBase, Cell):
+    pass

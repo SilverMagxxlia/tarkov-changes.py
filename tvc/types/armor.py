@@ -1,10 +1,11 @@
 from typing import TypedDict
 
-Armor = TypedDict(
-    'Armor',
+from .cell import Cell
+from .item import ItemBase
+
+_Armor = TypedDict(
+    '_Armor',
     {
-        'Name': str,
-        'Item ID': str,
         'Armor Class': str,
         'Materials': str,
         'Protection Zones': str,
@@ -15,11 +16,14 @@ Armor = TypedDict(
         'Ergonomics Penalty': str,
         'Blunt Throughput': str,
         'Repair Cost': str,
-        'Cell Height': str,
-        'Cell Width': str,
         'Item Weight': str,
         'Max Stack Size': str,
         'Can be sold on flea market': str,
         'Discard Limit': str,
-    }
+    },
+    total=False,
 )
+
+
+class Armor(_Armor, ItemBase, Cell):
+    pass
