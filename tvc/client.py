@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import aiohttp
 
 from typing import Dict, Optional, List
@@ -48,6 +50,12 @@ class TVCClient:
     async def fetch_armor(self, query: str = None) -> List[Armor]:
         data = await self.__requester.get_armor(query)
         return [Armor(d) for d in data]
+
+    async def __aenter__(self) -> TVCClient:
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb) -> None:
+        await self.__requester._session.close()
 
     @property
     def ammunition(self) -> List[Ammunition]:
