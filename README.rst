@@ -1,6 +1,11 @@
 tarkov-changes.py
 =======================
 
+.. image:: https://img.shields.io/pypi/v/tarkov-changes.py?color=ffd242&logo=pypi&logoColor=ffffff&style=for-the-badge
+    :alt: PyPI
+
+.. image:: https://img.shields.io/github/v/release/Hostagen/tarkov-changes.py?include_prereleases&logo=github&style=for-the-badge
+    :alt: GitHub release (latest by date including pre-releases)
 
 Quick Examples
 ---------------
