@@ -97,5 +97,6 @@ Simple to use without client declaration
         loop.run_until_complete(main())
         loop.close()
 
-`Click this for view more examples <https://github.com/Hostagen/tarkov-changes.py/tree/master/examples>`_
+View more examples
 ---------------------------------------------------------
+`Click here! <https://github.com/Hostagen/tarkov-changes.py/tree/master/examples>`_
