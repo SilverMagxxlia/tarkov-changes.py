@@ -36,10 +36,11 @@ class TVCClient:
         self._ammunition: Dict[str, Ammunition] = {}
         self._armors: Dict[str, Armor] = {}
         self._backpacks: Dict[str, Backpack] = {}
-        self._barter: Dict[str, Barter] = {}
+        self._barters: Dict[str, Barter] = {}
         self._foods: Dict[str, Food] = {}
         self._grenades: Dict[str, Grenade] = {}
         self._items: Dict[str, Item] = {}
+        self._keys: Dict[str, Key] = {}
 
     def start(self) -> None:
         self.loop.run_until_complete(self.load_endpoints())
@@ -54,6 +55,7 @@ class TVCClient:
         foods = await self.fetch_food()
         grenades = await self.fetch_grenade()
         items = await self.fetch_item()
+        keys = await self.fetch_key()
 
         for armor in armors:
             self._armors[armor.name] = armor
@@ -65,7 +67,7 @@ class TVCClient:
             self._backpacks[backpack.name] = backpack
 
         for barter in barters:
-            self._barter[barter.name] = barter
+            self._barters[barter.name] = barter
 
         for food in foods:
             self._foods[food.name] = food
@@ -75,6 +77,9 @@ class TVCClient:
 
         for item in items:
             self._items[item.name] = item
+
+        for key in keys:
+            self._keys[key.name] = key
 
     async def fetch_ammunition(self, query: str = None) -> List[Ammunition]:
         data = await self.__requester.get_ammunition(query)
@@ -121,3 +126,27 @@ class TVCClient:
     @property
     def armors(self) -> List[Armor]:
         return list(self._armors.values())
+
+    @property
+    def backpacks(self) -> List[Backpack]:
+        return list(self._backpacks.values())
+
+    @property
+    def barters(self) -> List[Barter]:
+        return list(self._barters.values())
+
+    @property
+    def foods(self) -> List[Food]:
+        return list(self._foods.values())
+
+    @property
+    def grenades(self) -> List[Grenade]:
+        return list(self._grenades.values())
+
+    @property
+    def items(self) -> List[Item]:
+        return list(self._items.values())
+
+    @property
+    def keys(self) -> List[Key]:
+        return list(self._keys.values())
