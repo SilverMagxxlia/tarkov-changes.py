@@ -34,6 +34,11 @@ class TVCClient:
     def _clear(self) -> None:
         self._ammunition: Dict[str, Ammunition] = {}
         self._armors: Dict[str, Armor] = {}
+        self._backpacks: Dict[str, Backpack] = {}
+        self._barter: Dict[str, Barter] = {}
+        self._foods: Dict[str, Food] = {}
+        self._grenades: Dict[str, Grenade] = {}
+        self._items: Dict[str, Item] = {}
 
     def start(self) -> None:
         self.loop.run_until_complete(self.load_endpoints())
@@ -43,12 +48,32 @@ class TVCClient:
 
         armors = await self.fetch_armor()
         ammunition = await self.fetch_ammunition()
+        backpacks = await self.fetch_backpack()
+        barters = await self.fetch_barter()
+        foods = await self.fetch_food()
+        grenades = await self.fetch_grenade()
+        items = await self.fetch_item()
 
         for armor in armors:
             self._armors[armor.name] = armor
 
         for ammo in ammunition:
             self._ammunition[ammo.name] = ammo
+
+        for backpack in backpacks:
+            self._backpacks[backpack.name] = backpack
+
+        for barter in barters:
+            self._barter[barter.name] = barter
+
+        for food in foods:
+            self._foods[food.name] = food
+
+        for grenade in grenades:
+            self._grenades[grenade.name] = grenade
+
+        for item in items:
+            self._items[item.name] = item
 
     async def fetch_ammunition(self, query: str = None) -> List[Ammunition]:
         data = await self.__requester.get_ammunition(query)
