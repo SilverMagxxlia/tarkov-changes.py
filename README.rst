@@ -3,8 +3,10 @@ tarkov-changes.py
 
 .. image:: https://img.shields.io/pypi/v/tarkov-changes.py?color=ffd242&logo=pypi&logoColor=ffffff&style=for-the-badge
     :alt: PyPI
+    :target: https://pypi.org/project/tarkov-changes.py/
 .. image:: https://img.shields.io/github/v/release/Hostagen/tarkov-changes.py?include_prereleases&logo=github&style=for-the-badge
     :alt: GitHub release (latest by date including pre-releases)
+    :target: https://github.com/Hostagen/tarkov-changes.py/releases
 
 A Wrapper for the `Tarkov Changes <https://tarkov-changes.com/changes>`_ API.
 
