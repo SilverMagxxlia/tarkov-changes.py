@@ -13,6 +13,7 @@ from .food import Food
 from .grenade import Grenade
 from .item import Item
 from .key import Key
+from .maps import Map
 from .requester import HTTPRequester
 
 __all__ = ('TVCClient',)
@@ -112,6 +113,10 @@ class TVCClient:
     async def fetch_key(self, query: str = None) -> List[Key]:
         data = await self.__requester.get_key(query)
         return [Key(d) for d in data]
+
+    async def fetch_map(self, query: str = None) -> List[Map]:
+        data = await self.__requester.get_map(query)
+        return [Map(d) for d in data]
 
     async def __aenter__(self) -> TVCClient:
         return self

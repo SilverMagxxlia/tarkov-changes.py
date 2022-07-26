@@ -30,6 +30,7 @@ if TYPE_CHECKING:
     from .types.grenade import Grenade as GrenadePayload
     from .types.item import Item as ItemPayload
     from .types.key import Key as KeyPayload
+    from .types.maps import Map as MapPayload
 
     T = TypeVar('T')
     BE = TypeVar('BE', bound=BaseException)
@@ -176,6 +177,15 @@ class HTTPRequester:
 
     def get_key(self, query: str = None) -> Response[List[KeyPayload]]:
         url = '/keys'
+
+        if query:
+            url += f'?query={query}'
+
+        r = Route('GET', url)
+        return self.request(r)
+
+    def get_map(self, query: str = None) -> Response[List[MapPayload]]:
+        url = '/maps'
 
         if query:
             url += f'?query={query}'
