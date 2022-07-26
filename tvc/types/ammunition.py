@@ -22,9 +22,6 @@ _Ammunition = TypedDict(
         'Heavy Bleeding Delta': str,
         'Light Bleeding Delta': str,
         'Ballistic Coefficient': str,
-        'Item Weight': str,
-        'Max Stack Size': str,
-        'Discard Limit': str,
     },
     total=False,
 )

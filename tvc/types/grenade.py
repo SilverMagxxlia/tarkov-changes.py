@@ -13,10 +13,7 @@ _Grenade = TypedDict(
         'Max Explosion Distance': str,
         'Min Explosion Distance': str,
         'Strength': str,
-        'Item Weight': str,
         'Can be sold on flea market': str,
-        'Max Stack Size': str,
-        'Discard Limit': str,
     },
     total=False,
 )

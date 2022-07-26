@@ -1,4 +1,4 @@
-from typing import TypedDict
+from typing import Optional, TypedDict
 
 from .cell import Cell
 from .item import ItemBase
@@ -6,13 +6,10 @@ from .item import ItemBase
 _Key = TypedDict(
     '_Key',
     {
-        'Fixed Price': int | None,
+        'Fixed Price': Optional[int],
         'Unlootable': str,
         'Discarding Block': str,
         'MaximumNumber Of Usage': str,
-        'Item Weight': str,
-        'Max Stack Size': str,
-        'Discard Limit': str,
     },
     total=False,
 )

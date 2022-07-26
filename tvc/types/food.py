@@ -12,9 +12,6 @@ _Food = TypedDict(
         'Stimulator Buffs': str,
         ' Health Effects': str,
         'Removes Effects': str,
-        'Item Weight': str,
-        'Max Stack Size': str,
-        'Discard Limit': str,
     },
     total=False,
 )

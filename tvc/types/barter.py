@@ -8,9 +8,6 @@ _Barter = TypedDict(
     {
         'Examine EXP': str,
         'Quest Only Item': str,
-        'Item Weight': str,
-        'Max Stack Size': str,
-        'Discard Limit': str,
     },
     total=False,
 )

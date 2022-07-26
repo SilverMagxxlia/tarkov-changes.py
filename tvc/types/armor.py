@@ -16,10 +16,7 @@ _Armor = TypedDict(
         'Ergonomics Penalty': str,
         'Blunt Throughput': str,
         'Repair Cost': str,
-        'Item Weight': str,
-        'Max Stack Size': str,
         'Can be sold on flea market': str,
-        'Discard Limit': str,
     },
     total=False,
 )
