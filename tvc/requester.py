@@ -1,4 +1,3 @@
-
 from __future__ import annotations
 
 import json
@@ -20,7 +19,7 @@ from typing import (
 from urllib.parse import quote as _uriquote
 
 from . import utils
-from .exceptions import InvalidRequest
+from .exceptions import InvalidRequest, NotFound
 
 if TYPE_CHECKING:
     from .types.armor import Armor as ArmorPayload
@@ -97,16 +96,17 @@ class HTTPRequester:
         async with self._session.request(method, url, **kwargs) as response:
             data = await json_or_text(response)
 
-            if response.status == 401:
-                raise InvalidRequest(
-                    response.status,
-                    status=data['status'],
-                    msg=data['msg'],
-                    result=data['result']
-                )
+            if response.status == 204:
+                return []
 
             if 300 > response.status >= 200:
                 return data['results']
+
+            if response.status == 401:
+                raise InvalidRequest(response, data)
+
+            if response.status == 404:
+                raise NotFound(response, data)
 
     async def close(self) -> None:
         await self._session.close()
