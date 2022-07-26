@@ -28,6 +28,7 @@ if TYPE_CHECKING:
     from .types.barter import Barter as BarterPayload
     from .types.food import Food as FoodPayload
     from .types.grenade import Grenade as GrenadePayload
+    from .types.headphone import Headphone as HeadphonePayload
     from .types.item import Item as ItemPayload
     from .types.key import Key as KeyPayload
     from .types.maps import Map as MapPayload
@@ -159,6 +160,15 @@ class HTTPRequester:
 
     def get_grenade(self, query: str = None) -> Response[List[GrenadePayload]]:
         url = '/grenades'
+
+        if query:
+            url += f'?query={query}'
+
+        r = Route('GET', url)
+        return self.request(r)
+
+    def get_headphone(self, query: str = None) -> Response[List[HeadphonePayload]]:
+        url = '/headphones'
 
         if query:
             url += f'?query={query}'

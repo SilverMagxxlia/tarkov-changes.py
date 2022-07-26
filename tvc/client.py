@@ -11,6 +11,7 @@ from .backpack import Backpack
 from .barter import Barter
 from .food import Food
 from .grenade import Grenade
+from .headphone import Headphone
 from .item import Item
 from .key import Key
 from .maps import Map
@@ -105,6 +106,10 @@ class TVCClient:
     async def fetch_grenade(self, query: str = None) -> List[Grenade]:
         data = await self.__requester.get_grenade(query)
         return [Grenade(d) for d in data]
+
+    async def fetch_headphone(self, query: str = None) -> List[Headphone]:
+        data = await self.__requester.get_headphone(query)
+        return [Headphone(d) for d in data]
 
     async def fetch_item(self, query: str = None) -> List[Item]:
         data = await self.__requester.get_item(query)
