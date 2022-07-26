@@ -8,7 +8,10 @@ tarkov-changes.py
     :alt: GitHub release (latest by date including pre-releases)
     :target: https://github.com/Hostagen/tarkov-changes.py/releases
 
-A Wrapper for the `Tarkov Changes <https://tarkov-changes.com/changes>`_ API.
+.. image:: https://img.shields.io/badge/Tarkov%20Changes-Provides%20API-abab99?style=for-the-badge&logo=appveyor&logoColor=ffffff
+    :target: https://tarkov-changes.com/changes
+
+A Wrapper for the `Tarkov Changes <https://tarkov-changes.com/changes>`_ API written with Python.
 
 Quick Examples
 ---------------
