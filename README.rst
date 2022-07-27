@@ -7,7 +7,6 @@ tarkov-changes.py
 .. image:: https://img.shields.io/github/v/release/Hostagen/tarkov-changes.py?include_prereleases&logo=github&style=for-the-badge
     :alt: GitHub release (latest by date including pre-releases)
     :target: https://github.com/Hostagen/tarkov-changes.py/releases
-
 .. image:: https://img.shields.io/badge/Tarkov%20Changes-Provides%20API-abab99?style=for-the-badge&logo=appveyor&logoColor=ffffff
     :target: https://tarkov-changes.com/changes
 
