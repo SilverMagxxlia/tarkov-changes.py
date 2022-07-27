@@ -1,12 +1,15 @@
 """
-tvc.types
-~~~~~~~~~~~~~~
-Wrapper for the Tarkov Changes API
+Tarkov Changes API
+~~~~~~~~~~~~~~~~~~
+
+A wrapper for the Tarkov Changes API.
+
 :copyright: (c) 2022-present Hostagen
 :license: MIT, see LICENSE for more details.
+
 """
 
-__version__ = 'v0.2.2'
+__version__ = 'v0.2.3'
 
 from .ammunition import *
 from .armor import *
