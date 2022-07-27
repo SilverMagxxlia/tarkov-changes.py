@@ -47,6 +47,30 @@ class TVCClient:
     def start(self) -> None:
         self.loop.run_until_complete(self.load_endpoints())
 
+    def get_ammunition(self, name: str) -> Optional[Ammunition]:
+        return self._ammunition.get(name)
+
+    def get_armor(self, name: str) -> Optional[Armor]:
+        return self._armors.get(name)
+
+    def get_backpack(self, name: str) -> Optional[Backpack]:
+        return self._backpacks.get(name)
+
+    def get_barter(self, name: str) -> Optional[Barter]:
+        return self._barters.get(name)
+
+    def get_food(self, name: str) -> Optional[Food]:
+        return self._foods.get(name)
+
+    def get_grenade(self, name: str) -> Optional[Grenade]:
+        return self._grenades.get(name)
+
+    def get_item(self, name: str) -> Optional[Item]:
+        return self._items.get(name)
+
+    def get_key(self, name: str) -> Optional[Key]:
+        return self._keys.get(name)
+
     async def load_endpoints(self) -> None:
         self._clear()
 
