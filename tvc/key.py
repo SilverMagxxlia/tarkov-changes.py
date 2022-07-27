@@ -48,7 +48,7 @@ class Key:
         self.fixed_price = fixed_price
         self.unlootable: bool = 'true' == data['Unlootable']
         self.discarding_block: bool = 'true' == data['Discarding Block']
-        self.maximum_usage: int = int(data['MaximumNumber Of Usage'])
+        self.maximum_usage: int = int(data['MaximumNumber Of Usage'] or 0)
         self.cell_height: int = int(data['Cell Height'])
         self.cell_width: int = int(data['Cell Width'])
         self.max_stack_size: int = int(data['Max Stack Size'])
