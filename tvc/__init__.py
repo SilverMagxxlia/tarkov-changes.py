@@ -16,6 +16,7 @@ from .armor import *
 from .backpack import *
 from .barter import *
 from .client import *
+from .enums import *
 from .food import *
 from .grenade import *
 from .headphone import *
