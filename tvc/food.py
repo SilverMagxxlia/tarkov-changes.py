@@ -30,7 +30,7 @@ class Food:
         self.effect_type: str = data['Effect Type']
         self.max_resource: int = int(data['Max Resource'])
         self.stimulator_buffs: str = data['Stimulator Buffs']
-        self.health_effects: List[str] = list(data[' Health Effects'])
+        self.health_effects: List[str] = list(data['Health Effects'])
         self.removes_effects: List[str] = list(data['Removes Effects'])
 
         self.cell_height: int = int(data['Cell Height'])
