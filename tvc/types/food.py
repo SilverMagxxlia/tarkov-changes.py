@@ -10,7 +10,7 @@ _Food = TypedDict(
         'Effect Type': str,
         'Max Resource': str,
         'Stimulator Buffs': str,
-        ' Health Effects': str,
+        'Health Effects': str,
         'Removes Effects': str,
     },
     total=False,
