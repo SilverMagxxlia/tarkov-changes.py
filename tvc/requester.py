@@ -25,6 +25,7 @@ if TYPE_CHECKING:
     from .types.armor import Armor as ArmorPayload
     from .types.ammunition import Ammunition as AmmunitionPayload
     from .types.backpack import Backpack as BackpackPayload
+    from .types.banned import BannedItem as BannedItemPayload
     from .types.barter import Barter as BarterPayload
     from .types.food import Food as FoodPayload
     from .types.grenade import Grenade as GrenadePayload
@@ -201,4 +202,8 @@ class HTTPRequester:
             url += f'?query={query}'
 
         r = Route('GET', url)
+        return self.request(r)
+
+    def get_banned(self) -> Response[List[BannedItemPayload]]:
+        r = Route('GET', '/banned')
         return self.request(r)

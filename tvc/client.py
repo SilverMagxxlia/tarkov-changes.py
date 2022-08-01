@@ -147,6 +147,10 @@ class TVCClient:
         data = await self.__requester.get_map(query)
         return [Map(d) for d in data]
 
+    async def fetch_banned_item_names(self) -> List[str]:
+        data = await self.__requester.get_banned()
+        return [d['Name'] for d in data]
+
     async def __aenter__(self) -> TVCClient:
         return self
 
