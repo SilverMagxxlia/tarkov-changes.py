@@ -2,13 +2,15 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 
+from .mixins import Hashable
+
 if TYPE_CHECKING:
     from .types.food import Food as FoodPayload
 
 __all__ = ('Food',)
 
 
-class Food:
+class Food(Hashable):
 
     def __init__(self, payload: FoodPayload) -> None:
         self.name: str = payload['Name']

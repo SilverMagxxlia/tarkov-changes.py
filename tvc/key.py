@@ -2,13 +2,15 @@ from __future__ import annotations
 
 from typing import Union, TYPE_CHECKING
 
+from .mixins import Hashable
+
 if TYPE_CHECKING:
     from .types.key import Key as KeyPayload
 
 __all__ = ('Key',)
 
 
-class Key:
+class Key(Hashable):
 
     def __init__(self, payload: KeyPayload) -> None:
         self.name: str = payload['Name']

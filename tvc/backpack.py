@@ -2,13 +2,15 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from .mixins import Hashable
+
 if TYPE_CHECKING:
     from .types.backpack import Backpack as BackPackPayload
 
 __all__ = ('Backpack',)
 
 
-class Backpack:
+class Backpack(Hashable):
 
     def __init__(self, payload: BackPackPayload) -> None:
         self.name: str = payload['Name']

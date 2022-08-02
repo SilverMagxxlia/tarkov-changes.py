@@ -2,13 +2,15 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from .mixins import Hashable
+
 if TYPE_CHECKING:
     from .types.barter import Barter as BarterPayload
 
 __all__ = ('Barter',)
 
 
-class Barter:
+class Barter(Hashable):
 
     def __init__(self, payload: BarterPayload) -> None:
         self.name: str = payload['Name']
