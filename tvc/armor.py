@@ -2,17 +2,19 @@ from __future__ import annotations
 
 from typing import List, TYPE_CHECKING
 
+from .mixins import Hashable
+
 if TYPE_CHECKING:
     from .types.armor import Armor as ArmorPayload
 
 __all__ = ('Armor',)
 
 
-class Armor:
+class Armor(Hashable):
 
     def __init__(self, payload: ArmorPayload) -> None:
         self.name: str = payload['Name']
-        self.item_id: str = payload['Item Weight']
+        self.id: str = payload['Item ID']
         self.armor_class: int = int(payload['Armor Class'])
         self.materials: str = payload['Materials']
         self.protection_zones: List[str] = list(payload['Protection Zones'])
@@ -23,7 +25,7 @@ class Armor:
         return self.name
 
     def __eq__(self, other: Armor) -> bool:
-        return isinstance(other, Armor) and self.item_id == other.item_id
+        return isinstance(other, Armor) and self.id == other.id
 
     def __ne__(self, other: Armor) -> bool:
         return not self.__eq__(other)
