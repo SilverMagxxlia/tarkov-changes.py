@@ -12,6 +12,25 @@ __all__ = ('Armor',)
 
 class Armor(Hashable):
 
+    __slots__ = (
+        'id',
+        'name',
+        'armor_class',
+        'materials',
+        'protection_zones',
+        'max_durability',
+        'effective_durability',
+        'movement_speed_penalty',
+        'turn_speed_penalty',
+        'blunt_throughput',
+        'repair_cost',
+        'cell_height',
+        'cell_width',
+        'weight',
+        'banned_on_flea',
+        'discard_limit',
+    )
+
     def __init__(self, payload: ArmorPayload) -> None:
         self.name: str = payload['Name']
         self.id: str = payload['Item ID']
@@ -23,12 +42,6 @@ class Armor(Hashable):
 
     def __str__(self) -> str:
         return self.name
-
-    def __eq__(self, other: Armor) -> bool:
-        return isinstance(other, Armor) and self.id == other.id
-
-    def __ne__(self, other: Armor) -> bool:
-        return not self.__eq__(other)
 
     def _update(self, data: ArmorPayload) -> None:
         self.max_durability: int(data['Max Durability'])

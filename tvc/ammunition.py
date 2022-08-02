@@ -12,6 +12,31 @@ __all__ = ('Ammunition',)
 
 class Ammunition(Hashable):
 
+    __slots__ = (
+        'id',
+        'name',
+        'caliber',
+        'flesh_damage',
+        'penetration_power',
+        'armor_damage',
+        'accuracy',
+        'recoil',
+        'frag_chance',
+        'durability_burn',
+        'stamina_burn_per_damage',
+        'projectile_speed',
+        'misfire_chance',
+        'penetration_chance',
+        'heavy_bleeding_delta',
+        'light_bleeding_delta',
+        'ballistic_coefficient',
+        'cell_height',
+        'cell_width',
+        'weight',
+        'max_stack_size',
+        'discard_limit',
+    )
+
     def __init__(self, payload: AmmunitionPayload) -> None:
         self.name: str = payload['Name']
         self.id: str = payload['Item ID']
@@ -24,12 +49,6 @@ class Ammunition(Hashable):
 
     def __int__(self) -> int:
         return self.flesh_damage
-
-    def __eq__(self, other: Ammunition) -> bool:
-        return isinstance(other, Ammunition) and self.id == other.id
-
-    def __ne__(self, other: Ammunition) -> bool:
-        return not self.__eq__(other)
 
     def __repr__(self) -> str:
         attrs = (

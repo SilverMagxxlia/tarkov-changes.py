@@ -12,6 +12,19 @@ __all__ = ('Backpack',)
 
 class Backpack(Hashable):
 
+    __slots__ = (
+        'id',
+        'name',
+        'blocks_armor_vest',
+        'speed_penalty_percent',
+        'cell_height',
+        'cell_width',
+        'weight',
+        'banned_on_flea',
+        'discard_limit',
+        'max_stack_size',
+    )
+
     def __init__(self, payload: BackPackPayload) -> None:
         self.name: str = payload['Name']
         self.id: str = payload['Item ID']
