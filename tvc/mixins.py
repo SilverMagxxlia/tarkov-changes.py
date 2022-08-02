@@ -48,5 +48,5 @@ class EqualityComparable:
 class Hashable(EqualityComparable):
     __slots__ = ()
 
-    def __hash__(self) -> hash:
-        return sha1(bytes(self.id))
+    def __hash__(self) -> int:
+        return int(self.id, 16)
