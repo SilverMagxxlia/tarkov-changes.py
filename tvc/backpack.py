@@ -32,6 +32,10 @@ class Backpack(Hashable):
 
         self._update(payload)
 
+    @property
+    def image_url(self):
+        return f'https://tarkov-changes.com/img/items/128/{self.id}.png'
+
     def _update(self, data: BackPackPayload) -> None:
         self.speed_penalty_percent: int = int(data['Speed Penalty (%)'])
         self.cell_height: int = int(data['Cell Height'])

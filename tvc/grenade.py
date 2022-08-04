@@ -21,6 +21,10 @@ class Grenade(Hashable):
     def __str__(self) -> str:
         return self.name
 
+    @property
+    def image_url(self):
+        return f'https://tarkov-changes.com/img/items/128/{self.id}.png'
+
     def _update(self, data: GrenadePayload) -> None:
         self.can_hide_during_throw: bool = 'true' == data['Can Be Hidden During Throw']
         self.contusion_distance: int = int(data['Contusion Distance'])

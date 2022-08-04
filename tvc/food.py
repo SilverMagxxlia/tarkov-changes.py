@@ -21,11 +21,9 @@ class Food(Hashable):
     def __str__(self) -> str:
         return self.name
 
-    def __eq__(self, other: Food) -> bool:
-        return isinstance(other, Food) and self.id == other.id
-
-    def __ne__(self, other: Food) -> bool:
-        return not self.__eq__(other)
+    @property
+    def image_url(self):
+        return f'https://tarkov-changes.com/img/items/128/{self.id}.png'
 
     def _update(self, data: FoodPayload) -> None:
         self.use_time: int = int(data['Use Time'])

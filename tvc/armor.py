@@ -43,6 +43,10 @@ class Armor(Hashable):
     def __str__(self) -> str:
         return self.name
 
+    @property
+    def image_url(self):
+        return f'https://tarkov-changes.com/img/items/128/{self.id}.png'
+
     def _update(self, data: ArmorPayload) -> None:
         self.max_durability: int(data['Max Durability'])
         self.effective_durability: float = data['Effective Durability']

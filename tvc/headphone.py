@@ -27,6 +27,10 @@ class Headphone(Hashable):
     def __ne__(self, other: Headphone) -> bool:
         return not self.__eq__(other)
 
+    @property
+    def image_url(self):
+        return f'https://tarkov-changes.com/img/items/128/{self.id}.png'
+
     def _update(self, data: HeadphonePayload) -> None:
         self.block_earpiece: bool = 'true' == data['Blocks Earpiece']
         self.block_eyewear: bool = 'true' == data['Blocks Eyewear']

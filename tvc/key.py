@@ -41,6 +41,10 @@ class Key(Hashable):
         joined = ' '.join('%s=%r' % t for t in attrs)
         return f'<{self.__class__.__name__} {joined}>'
 
+    @property
+    def image_url(self):
+        return f'https://tarkov-changes.com/img/items/128/{self.id}.png'
+
     def _update(self, data: KeyPayload) -> None:
         fixed_price: Union[int, None] = data['Fixed Price']
 
