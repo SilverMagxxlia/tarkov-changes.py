@@ -9,7 +9,7 @@ A wrapper for the Tarkov Changes API.
 
 """
 
-__version__ = 'v0.2.9'
+__version__ = 'v0.2.10'
 
 from .ammunition import *
 from .armor import *
