@@ -43,6 +43,7 @@ class TVCClient:
         self._grenades: Dict[str, Grenade] = {}
         self._items: Dict[str, Item] = {}
         self._keys: Dict[str, Key] = {}
+        self._maps: Dict[str, Map] = {}
 
     def start(self) -> None:
         self.loop.run_until_complete(self.load_endpoints())
@@ -82,6 +83,7 @@ class TVCClient:
         grenades = await self.fetch_grenade()
         items = await self.fetch_item()
         keys = await self.fetch_key()
+        maps = await self.fetch_map()
 
         for armor in armors:
             self._armors[armor.name] = armor
@@ -106,6 +108,9 @@ class TVCClient:
 
         for key in keys:
             self._keys[key.name] = key
+
+        for _map in maps:
+            self._maps[_map] = _map
 
     async def fetch_ammunition(self, query: str = None) -> List[Ammunition]:
         data = await self.__requester.get_ammunition(query)
@@ -188,3 +193,7 @@ class TVCClient:
     @property
     def keys(self) -> List[Key]:
         return list(self._keys.values())
+
+    @property
+    def maps(self) -> List[Map]:
+        return list(self._maps.values())
