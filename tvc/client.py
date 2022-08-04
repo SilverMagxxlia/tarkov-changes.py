@@ -110,7 +110,7 @@ class TVCClient:
             self._keys[key.name] = key
 
         for _map in maps:
-            self._maps[_map] = _map
+            self._maps[_map.name] = _map
 
     async def fetch_ammunition(self, query: str = None) -> List[Ammunition]:
         data = await self.__requester.get_ammunition(query)
