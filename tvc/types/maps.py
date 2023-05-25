@@ -11,7 +11,9 @@ Map = TypedDict(
         'Raid Timer': int,
         'Max Players': float,
         'Min Players': float,
-        'Required Player Level': float,
+        'Required Player Level Min': float,
+        'Required Player Level Max': float,
+        'Min. Player Level - Access Keys': float,
     },
     total=False,
 )

@@ -10,6 +10,20 @@ __all__ = ('Map',)
 
 class Map:
 
+    __slots__ = (
+        'name',
+        'enabled',
+        'locked',
+        'internal_name',
+        'avg_player_level',
+        'raid_timer',
+        'max_players',
+        'min_players',
+        'required_player_level_min',
+        'required_player_level_max',
+        'min_player_level_access_key',
+    )
+
     def __init__(self, payload: MapPayload) -> None:
         self.name: str = payload['Name']
         self._update(payload)
@@ -37,4 +51,6 @@ class Map:
         self.raid_timer: int = data['Raid Timer']
         self.max_players: int = int(data['Max Players'])
         self.min_players: int = int(data['Min Players'])
-        self.required_player_level: int = int(data['Required Player Level'])
+        self.required_player_level_min: int = int(data['Required Player Level Min'])
+        self.required_player_level_max: int = int(data['Required Player Level Max'])
+        self.min_player_level_access_key: float = int(data['Min. Player Level - Access Keys'])
